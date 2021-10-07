@@ -33,11 +33,11 @@ class LinkedList:
         if index == 0:
             new_node.next = self.head
             self.head = new_node
-        else:
-            node = self.get_node(index - 1)
-            node_next = node.next
-            node.next = new_node
-            new_node.next = node_next
+            return
+        node = self.get_node(index - 1)
+        node_next = node.next
+        node.next = new_node
+        new_node.next = node_next
         return
 
 
@@ -45,6 +45,6 @@ linked_list = LinkedList(5)
 linked_list.append(12)
 linked_list.append(13)
 linked_list.append(15)
-linked_list.add_node(0, 3)
+linked_list.add_node(2, 3)
 print('----')
 linked_list.print_all()

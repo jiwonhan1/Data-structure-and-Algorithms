@@ -14,4 +14,5 @@ def get_absent_student(all_array, present_array):
 
     return absent_students
 
+
 print(get_absent_student(all_students, present_students))

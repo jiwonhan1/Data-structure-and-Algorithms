@@ -13,6 +13,7 @@ def merge_sort(array):
     return merge(left_array, right_array)
 
 
+
 def merge(array1, array2):
     result = []
     array1_index = 0

@@ -5,7 +5,6 @@ supply_dates = [4, 10, 15]
 supply_supplies = [20, 5, 10]
 supply_recover_k = 30
 
-
 def get_minimum_count_of_overseas_supply(stock, dates, supplies, k):
     answer = 0
     last_added_date_index = 0
@@ -18,6 +17,8 @@ def get_minimum_count_of_overseas_supply(stock, dates, supplies, k):
         answer += 1
         heappop = -heapq.heappop(max_heap)
         stock += heappop
+
+        print(last_added_date_index)
     return answer
 
 

@@ -13,12 +13,12 @@ class LinkedList:
         self.head = Node(data)
     def append(self, data):
         cur = self.head
-        while cur.next is not None:
+        while cur.next:
             cur = cur.next
         cur.next = Node(data)
     def print_all(self):
         list = self.head
-        while(list is not None):
+        while list:
             print(list.data)
             list = list.next
 

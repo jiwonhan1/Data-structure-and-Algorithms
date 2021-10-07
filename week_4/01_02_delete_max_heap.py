@@ -14,7 +14,7 @@ class MaxHeap:
             else:
                 break
 
-    def delete(self):
+     def delete(self):
         top_index = 1
         self.items[top_index], self.items[-1] = self.items[-1], self.items[top_index]
         prev_max = self.items.pop(-1)

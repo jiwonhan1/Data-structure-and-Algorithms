@@ -9,3 +9,4 @@ def find_max_num(array):
 
 result = find_max_num(input)
 print(result)
+

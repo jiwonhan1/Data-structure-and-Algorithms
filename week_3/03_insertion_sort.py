@@ -8,8 +8,8 @@ def insertion_sort(array):
                 array[i - j], array[i - j - 1] = array[i - j - 1], array[i - j]
             else:
                 break
-
     return
+
 
 
 insertion_sort(input)

@@ -1,5 +1,6 @@
 input = "0001100"
 
+
 def find_count_to_turn_out_to_all_zero_or_all_one(string):
     zeroCount = 0
     oneCount = 0
@@ -18,6 +19,8 @@ def find_count_to_turn_out_to_all_zero_or_all_one(string):
                 oneCount += 1;
         elif arrString[index + 1] == "0" and arrString[index] == "1":
                 oneCount += 1
+    print(zeroCount)
+    print(oneCount)
     if (zeroCount > oneCount): return oneCount
     else: return zeroCount
 

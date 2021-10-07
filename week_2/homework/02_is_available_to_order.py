@@ -4,6 +4,9 @@ shop_orders = ["오뎅", "콜라", "만두"]
 
 def is_available_to_order(menus, orders):
     menus_set = set(menus) #O(N)
+    print(menus_set)
+    menus.sort()
+    print(menus)
     for order in orders: #O(M)
         if order not in menus_set:
             return False

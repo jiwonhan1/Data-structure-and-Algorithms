@@ -7,5 +7,5 @@ def is_number_exist(number, array):
     return False
 
 
-result = is_number_exist(9, input)
+result = is_number_exist(3, input)
 print(result)

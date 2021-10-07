@@ -1,3 +1,5 @@
+from typing import List, Any
+
 array_a = [1, 2, 3, 5]
 array_b = [4, 6, 7, 8]
 
@@ -7,7 +9,6 @@ def merge(array1, array2):
     array1_index = 0
     array2_index = 0
     while array1_index < len(array1) and array2_index < len(array2):
-        # print(array2_index)
         if array1[array1_index] < array2[array2_index]:
             array_c.append(array1[array1_index])
             array1_index += 1
@@ -22,6 +23,7 @@ def merge(array1, array2):
         while array1_index < len(array1):
             array_c.append(array1[array1_index])
             array1_index += 1
+
     return array_c
 
 

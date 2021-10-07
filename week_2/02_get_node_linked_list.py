@@ -21,13 +21,14 @@ class LinkedList:
             cur = cur.next
 
     def get_node(self, index):
-        count = 0
+        count = 1
         node = self.head
         while node is not None and index > count:
             node = node.next
-            count =+ 1
+            count += 1
         return node.data
 
 linked_list = LinkedList(5)
 linked_list.append(12)
-print(linked_list.get_node(2)) # -> 5를 들고 있는 노드를 반환해야 합니다!
+# linked_list.print_all()
+print(linked_list.get_node(1)) # -> 5를 들고 있는 노드를 반환해야 합니다!

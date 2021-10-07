@@ -34,7 +34,7 @@ class Stack:
 
 
 stack = Stack()
-stack.push(3)
+# stack.push(3)
 print(stack.pop())
 print(stack.peek())
 print(stack.is_empty())

@@ -24,5 +24,7 @@ def dfs_stack(adjacent_graph, start_node):
                 stack.append(adjacent_node)
 
     return visited
+
+
 print(dfs_stack(graph, 1))  # 1 이 시작노드입니다!
 # [1, 9, 10, 5, 8, 6, 7, 2, 3, 4] 이 출력되어야 합니다!

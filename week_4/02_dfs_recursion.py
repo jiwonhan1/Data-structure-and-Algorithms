@@ -22,6 +22,5 @@ def dfs_recursion(adjacent_graph, cur_node, visited_array):
     # print(adjacent_graph[1])
     return
 
-
 dfs_recursion(graph, 1, visited)  # 1 이 시작노드입니다!
 print(visited)  # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 이 출력되어야 합니다!

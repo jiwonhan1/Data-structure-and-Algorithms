@@ -21,10 +21,11 @@ def get_linked_list_sum(linked_list_1, linked_list_2):
 def sum_of_linked_list(linked_list):
     node = linked_list.head
     linked_list_sum = 0
-    while node is not None:
+    while node:
         linked_list_sum = linked_list_sum * 10 + node.data
         node = node.next
     return linked_list_sum
+
 
 
 linked_list_1 = LinkedList(6)
