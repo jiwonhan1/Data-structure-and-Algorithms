@@ -5,7 +5,7 @@ class ListNode(object):
 class Solution(object):
     def reverseList(self, head):
         prev = None
-        cur = prev
+        cur = head
         while cur:
             nextNode = head.next
             cur.next = prev
