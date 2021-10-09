@@ -16,6 +16,7 @@ class Solution:
         return validate(root)
 
     # Iterative Traversal with Valid Range **DFS**
+    # DFS would be better than BFS since it works faster here.
     def isValidBST2(self, root):
         if not root:
             return True
