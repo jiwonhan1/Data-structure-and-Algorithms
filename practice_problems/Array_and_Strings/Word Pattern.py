@@ -17,3 +17,12 @@ class Solution(object):
                 if map_char[c] != w:
                     return False
         return True
+#
+# class Solution(object):
+#     def wordPattern(self, pattern, s):
+#         map_char = {}
+#         map_pattern = {}
+#
+#         word = s.split(' ')
+#
+#         for c, w in zip(pattern, word):

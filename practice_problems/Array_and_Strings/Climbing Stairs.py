@@ -1,5 +1,5 @@
 class Solution(object):
-    def clibStarts(self, n):
+    def climbStairs(self, n):
         # Fibo with memorization
         # Time complexity O(N) Space complexity O(N)
         dp = {

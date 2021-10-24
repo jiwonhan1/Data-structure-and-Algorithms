@@ -7,6 +7,7 @@ class Solution(object):
                 return True
             validNums.add(nums[i])
         return False
+
     # Time complexity : O(nlogn) Space complexity : O(1)
     def containsDuplicates2(self, nums):
         nums.sort()
@@ -14,3 +15,4 @@ class Solution(object):
             if nums[i] == nums[i+1]:
                 return True
         return False
+
