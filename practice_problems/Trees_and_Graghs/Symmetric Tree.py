@@ -4,6 +4,9 @@ class TreeNode(object):
         self.left = left
         self.right = right
 class Solution(object):
+    # Time complexity O(N)
+    # Space complexity O(N) : The number of recursive calls is bound by the height of the tree
+
     def isMirror(self, t1, t2):
         if t1 is None and t2 is None:
             return True

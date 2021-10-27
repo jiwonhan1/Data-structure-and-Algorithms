@@ -3,6 +3,7 @@ class ListNode(object):
         self.val = val
         self.next = next
 class Solution(object):
+    # Time complexity O(N log N) Space complexity O(N)
     def mergeKLists(self, lists):
         self.nodes = []
         head = point = ListNode()
