@@ -5,16 +5,23 @@ class TreeNode(object):
         self.right = right
 
 # BST
-# from collections import deque
-# class Solution(object):
-#     def zigzagLevelOrder(self, root):
-#         ret = []
-#         level_list = deque()
-#         if root is None:
-#             return []
-#         node_queue = deque([root, None])
-#         is_order_left = True
-#
-#         while node_queue:
-#             curr_node = node_queue.popleft()
-# to be continued..
+from collections import deque
+class Solution(object):
+    # Time complexity O(N) Space compexity O(N)
+    def zigzagLevelOrder(self, root):
+        results = []
+        if not root:
+            return results
+        def dfs(node, level):
+            if level >= len(results):
+                results.append(deque([node.val]))
+            else:
+                if level % 2 == 0:
+                    results[level].append(node.val)
+                else:
+                    results[level].appendleft(node.val)
+                for next_node in [node.left, node.right]:
+                    if next_node:
+                        dfs(next_node, level +1)
+        dfs(root, 0)
+        return results
