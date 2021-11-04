@@ -1,4 +1,10 @@
 class Solution(object):
+    # Left-to-Right Pass
+    # Each symbol adds its own value, except for when a smaller valued symbol is before a larger valued symbol
+    # In those cases, instead of adding both symbols to the total, we need to subtract the large from the small, adding that instead
+    # Time complexity O(1) Space complexity O(1)
+    # As there is a finite set of roman numerals, the maximum number possible number can be 3999, which in roman numerals is MMMCMXCIX.
+    # As such the time complexity is O(1)
     def romanToInt(self, s):
         romanInt = {
             'I' : 1,
