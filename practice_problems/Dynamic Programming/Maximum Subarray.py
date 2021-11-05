@@ -13,6 +13,8 @@ class Solution(object):
     # Dynamic Programming
     # Time complexity O(N) Space complexity O(1)
     def maxSubarray2(self, nums):
+        # current_subarray: keep the running count of the current subarray we are focusing
+        # max_subarray: our final return value. continuously update it whenever we find a bigger subarray
         current_subarray = max_subarray = nums[0]
 
         for num in nums[1:]:

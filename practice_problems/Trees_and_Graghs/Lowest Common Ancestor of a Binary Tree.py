@@ -18,6 +18,11 @@ class Solution(object):
                 self.ans = current_node
         recurse_tree(root)
         return self.ans
+    # Iterative using parent pointers
+    # If we have parent pointers for each node we can traverse back from p and q to get their ancestors.
+    # The first common node we get during this traversal would be the LCA node.
+    # We can save the parent pointers in a dictionary as we traverse the tree
+    # Time complexity O(N) Space complexity O(N)
     def lowestCommonAncestor2(self, root, p, q):
         stack = [root]
         parent = {root:None}
