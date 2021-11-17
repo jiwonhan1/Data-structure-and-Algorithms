@@ -1,4 +1,11 @@
 class Solution(object):
+    # Three Pointers (Start from the begining)
+    # Time complexity O(N+M)
+    # Space complexity O(M)
+    # Initialize nums1Copy to be a new array containing the first m values of nums1
+    # Initialize read pointer p1 to the beginning of nums1Copy
+    # Initialize read pointer p2 to the beginning of nums2
+
     def merge(self, nums1, m, nums2, n):
         nums1_copy = nums1[:m]
 

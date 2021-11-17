@@ -6,6 +6,9 @@ class TreeNode(object):
         self.left = left
         self.right = right
 class Solution(object):
+    # Iteration
+    # Time complexity O(N)
+    # Space complexity O(N)
     def levelOrder(self, root):
         levels = []
         if not root:

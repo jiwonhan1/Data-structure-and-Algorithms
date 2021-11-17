@@ -8,10 +8,10 @@ class Solution(object):
             else:
                 no_duplicate_nums.remove(num)
         return no_duplicate_nums.pop()
-
+from collections import defaultdict
     # Time complexity O(n)
     def singleNumber2(self, nums):
-        hash_table = {}
+        hash_table = defaultdict(int)
 
         for num in nums:
             hash_table[num] += 1
