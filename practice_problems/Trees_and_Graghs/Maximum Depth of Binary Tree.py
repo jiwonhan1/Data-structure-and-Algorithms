@@ -7,21 +7,28 @@ class TreeNode(object):
 from collections import deque
 
 class Solution(object):
-    # Time complexity O(N)
-    def maxDepth(self, root):
-        level = 0
+    # Recursion
+    # Time complexity O(N) Space compelxity O(N)
+    def maxDepth(self,root):
         if not root:
-            return level
+            return 0
+        else:
+            left_depth = self.maxDepth(root.left)
+            right_depth = self.maxDepth(root.right)
+        return max(left_depth, right_depth) + 1
 
-        Q = deque([root])
+    # Iteration
+    # Time complexity O(N) Space complextiy O(N)
+    def maxDepth2(self, root):
+        stack = []
+        if root:
+            stack.append((1, root))
 
-        while Q:
-            size = len(Q)
-            for i in range(size):
-                popped = Q.popleft()
-                if popped.left:
-                    Q.append(popped.left)
-                if popped.right:
-                    Q.append(popped.right)
-            level += 1
-        return level
+            depth = 0
+            while stack:
+                current_depth, root = stack.pop()
+                if root:
+                    depth = max(depth, current_depth)
+                    stack.append((current_depth+1, root.left))
+                    stack.append((current_depth+1, root.right))
+        return depth

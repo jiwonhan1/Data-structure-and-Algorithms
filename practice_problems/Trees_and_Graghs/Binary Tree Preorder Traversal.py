@@ -5,7 +5,19 @@ class TreeNode(object):
         self.right = right
 
 class Solution(object):
-    def preorderTraversal(self, root):
+    def preorderTraversal(self,root):
+        res = []
+        def recurse(node):
+            if not node:
+                return
+            if node:
+                res.append(node)
+            recurse(node.left)
+            recurse(node.right)
+        recurse(root)
+        return res
+
+    def preorderTraversal2(self, root):
         if not root:
             return []
         stack, output = [root,], []
