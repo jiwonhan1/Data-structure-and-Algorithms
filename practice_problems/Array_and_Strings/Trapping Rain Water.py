@@ -1,5 +1,9 @@
 class Solution(object):
+    # Using two pointers
     # Time complexity O(n) Space complexity O(n)
+    # If there is a larger bar at one end, we are assured that the water trapped would be dependent on height of bar in current direction.
+    # As soon as bar at other end is smaller, we start iterating in opposite direction.
+    # We must maintain left_max and right_max during the iteration, but now we can do it one iteration using 2 pointers, switching between the two.
     def trap(self, height):
         if len(height) == 0:
             return 0

@@ -13,4 +13,10 @@ class Solution(object):
             cur = nextNode
         return prev
 
-
+    def reverseList2(self, head):
+        if not head or not head.next:
+            return head
+        p = self.reverseList2(head.next)
+        head.next.next = head
+        head.next = None
+        return p

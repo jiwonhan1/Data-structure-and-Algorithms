@@ -1,5 +1,12 @@
+from collections import deque
 class Solution:
-    # Time complexity O(n)
+    # built in split and reverse
+    # Time complexity O(N) Space complexity O(N)
+    def reverseWords(self, s):
+        return ''.join(reversed(s.split()))
+
+    # Reverse the Whole string and then reverse each word
+    # Time complexity O(n) Space complexity O(N)
     def trim_spaces(self,s):
         left, right = 0, len(s)-1
         while left <= right and s[left] == ' ':
@@ -35,3 +42,22 @@ class Solution:
         self.reverse(l, 0, len(l)-1)
         self.reverse_each_words(l)
         return ''.join(l)
+
+    # Deque of Words
+    # Time and space complexity O(N)
+    def reverseWords(self, s):
+        left, right = 0, len(s) -1
+        while left <= right and s[left] == " ":
+            left += 1
+        while left <= right and s[right] == " ":
+            right -= 1
+
+        d, word = deque(), []
+        while left <= right:
+            if s[left] == ' ' and word:
+                d.appendleft(''.join(word))
+            elif s[left] != ' ':
+                word.append(s[left])
+            left += 1
+        d.appendleft(''.join(word))
+        return ' '.join(d)

@@ -21,3 +21,16 @@ class Solution(object):
         if l2:
             cur.next = l2
         return dummy.next
+    # Recursive
+    # Time complexity O(N+M) Space complexity O(N+M)
+    def mergeTwoLists(self, l1, l2):
+        if not l1:
+            return l2
+        elif not l2:
+            return l2
+        elif l1.val < l2.val:
+            self.mergeTwoLists(l1.next, l2)
+            return l1
+        else:
+            self.mergeTwoLists(l1, l2.next)
+            return l2

@@ -1,4 +1,5 @@
 class Solution(object):
+    # Two Pointers
     # Time complexity O(N) Space complexity O(1)
     def twoSum(self, numbers, target):
         low = 0

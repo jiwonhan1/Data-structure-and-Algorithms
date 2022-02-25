@@ -1,4 +1,6 @@
 class Solution(object):
+    # Two Pointers
+    # Time complexity O(N) Space complexity O(1)
     def removeDuplicates(self, nums):
         if len(nums) == 0:
             return 0

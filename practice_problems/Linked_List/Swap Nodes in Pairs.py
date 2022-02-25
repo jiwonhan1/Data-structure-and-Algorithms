@@ -23,3 +23,17 @@ class Solution(object):
             head = first_node.next
 
         return dummy.next
+
+    # Time complexity O(N)
+    # Space complexity O(N)
+    def swapPairs2(self, head):
+        if not head or head.next:
+            return head
+
+        first_node = head
+        second_node = head.next
+
+        first_node.next = self.swapPairs2(second_node.next)
+        second_node.next = first_node
+
+        return second_node
