@@ -5,12 +5,12 @@ class Node:
         self.right = right
 
 class Solution:
-    def preorderTraversal(self, root):
+    def postorderTraversal(self, root):
         res = []
-        def recursePreorder(node, res):
+        def recursePostorder(node, res):
             if node:
-                recursePreorder(node.left, res)
-                recursePreorder(node.right, res)
+                recursePostorder(node.left, res)
+                recursePostorder(node.right, res)
                 res.append(node.val)
-        recursePreorder(root, res)
+        recursePostorder(root, res)
         return res
