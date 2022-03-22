@@ -1,4 +1,13 @@
 class Solution(object):
+    # Brute Force
+    # We will simply consider the area for every possible pair of the lines and find out the maximum area out of those.
+    # Time complexity O(N) Space complexity O(1)
+    def maxArea(self, height):
+        maxarea = 0
+        for i in range(len(height)):
+            for j in range(i+1, len(height)):
+                maxarea = max(maxarea, min(height[i], height[j])* j-i)
+
     # Two pointer approach
     # Time complexity O(n) space complexity O(1)
     # We take two pointers, one at the beginning and one at the end of the array constituting the length of the lines.
