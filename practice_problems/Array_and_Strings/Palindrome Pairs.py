@@ -1,6 +1,9 @@
 class Solution:
     # Brute Force
     # Time complexity O(n^2 * k)
+    # Let n be the number of words, and k be the length of the longest word
+    # There are n2 pairs of words. Then appending 2 words requires time 2k,
+    # as does reversing it and then comparing it for equality.
     # Space complexity O(n^2)
     def palindromePairs(self,words):
         pairs = []

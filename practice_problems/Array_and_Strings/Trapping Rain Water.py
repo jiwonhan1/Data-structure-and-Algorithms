@@ -7,7 +7,6 @@ class Solution(object):
     def trap(self, height):
         if len(height) == 0:
             return 0
-
         left = 0
         right = len(height)-1
         leftMax = rightMax = 0
@@ -27,3 +26,42 @@ class Solution(object):
                 right -= 1
 
         return ans
+
+    # Dynamic Programming
+    # Space/Time complexity O(N)
+    # Find the maximum height of bar from the left and end upto an index i in the array left_max
+    # Find maximum height of bar from the right end upto an index i in the array right_max
+    # Iterate over the height array and update ans:
+    # Add min(left_max[i], right_max[i]) - height[i] to ans
+    def trap(self, height):
+
+        N = len(height)
+        if N < 3: return 0
+
+        result = 0
+        l_max, r_max = [0] * N, [0] * N
+        l_max[0] = height[0]
+
+        for i in range(1, N):
+            l_max = max(height[i], l_max[i-1])
+
+        r_max[N-1] = height[N-1]
+
+        for j in range(N-2, -1,-1):
+            r_max = max(height[i], r_max[i+1])
+
+        for i in range(1, N-1):
+            result += min(l_max[i], r_max[i]) - height[i]
+
+        return result
+
+    # def trapStack(self, height):
+    #     result, i = 0, 0
+    #
+    #     stack = []
+    #
+    #     while i < len(height):
+    #         while stack and height[stack[-1]] < height[i]:
+    #             t = stack.pop()
+    #             if not stack: break
+    #             dist = i - st[-1] -1
