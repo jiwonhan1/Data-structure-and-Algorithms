@@ -32,3 +32,20 @@ class Solution:
     # To Do: Bottom-Up Implementation
 
 
+    def minDifficulty(self, jobDifficulty, d):
+        n = len(jobDifficulty)
+        # If we cannot schedule at least one job per day, it is impossible to create a schedule
+        if n < d:
+            return -1
+
+        dp = [[float('inf')] * (d+1) for _ in range(n)]
+
+        dp[-1][d] = jobDifficulty[-1]
+
+        for day in range(n-2,-1,-1):
+            for i in range(day-1, n-(d-day)):
+                hardest = 0
+                for j in range(i, n-(d-day)):
+                    hardest = max(hardest, jobDifficulty[i])
+                    dp[i][day] = min(dp[i][day], hardest + dp[j+1][day+1])
+        return dp[0][1]
