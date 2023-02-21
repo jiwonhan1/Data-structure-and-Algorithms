@@ -22,3 +22,7 @@ class Solution(object):
                 left += 1
             result[i] = square * square
         return result
+
+    def sortedSquares2(self, nums):
+        n = len(nums)
+        result = [0] * n

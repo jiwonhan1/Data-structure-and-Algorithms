@@ -5,3 +5,4 @@ class Solution(object):
             if 9 < num < 100 or 999 < num < 10000 or num == 100000:
                 result += 1
         return result
+
